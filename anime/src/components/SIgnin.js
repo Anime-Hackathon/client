@@ -45,34 +45,35 @@ const LoginForm = ({ touched, errors, isSubmitting, values }) => {
   );
 };
 const SuperLoginForm = withFormik({
-    mapPropsToValues({username,password,first_name,last_name,email}){
-        return {
-            username: username || '',
-            password: password || '',
-            first_name: first_name || '',
-            last_name: last_name || '',
-            email: email || '',
-        };
-    },
-        validationSchema:Yup.object().shape({
-        username: Yup.string().required('Username is required!'),
-        password: Yup.string().required('Password is required!').min(7, 'Password must be 8 characters'),
-        first_name: Yup.string().required('First name is required!'),
-        last_name: Yup.string().required('Last name is required!'),
-        email: Yup.string().required('Email address is required!')
-    }),
-    handleSubmit(values, {resetForm, setSubmitting, setStatus}){
-        axios.post(‘’, values)
-        .then(response => {
-            console.log(response);
-            resetForm();
-            setSubmitting(false);
-            setStatus(response.data);
-        })
-        .catch(error => console.log(error));
-        setSubmitting(false);
-    }
+  mapPropsToValues({ username, password, first_name, last_name, email }) {
+    return {
+      username: username || "",
+      password: password || "",
+      first_name: first_name || "",
+      last_name: last_name || "",
+      email: email || ""
+    };
+  },
+  validationSchema: Yup.object().shape({
+    username: Yup.string().required("Username is required!"),
+    password: Yup.string()
+      .required("Password is required!")
+      .min(7, "Password must be 8 characters"),
+    first_name: Yup.string().required("First name is required!"),
+    last_name: Yup.string().required("Last name is required!"),
+    email: Yup.string().required("Email address is required!")
+  })
+  // handleSubmit(values, {resetForm, setSubmitting, setStatus}){
+  //  axios.post(‘’, values)
+  // .then(response => {
+  //    console.log(response);
+  //    resetForm();
+  //    setSubmitting(false);
+  //    setStatus(response.data);
+  // })
+  // .catch(error => console.log(error));
+  // setSubmitting(false);
+  // }
+})(LoginForm);
 
-})(LoginForm)
-
-export default  SuperLoginForm;
+export default SuperLoginForm;

@@ -1,37 +1,46 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink
+} from "reactstrap";
 
-const NavBar = () => {
+import { Link } from "react-router-dom";
+
+const CoolNav = props => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-    <div
-      style={{
-        width: "30%",
-        display: "flex",
-        justifyContent: "space-between",
-        alignContent: "start",
-        color: "white",
-        textDecoration: "none"
-      }}
-    >
-      ) };
-      <NavLink to="/signup" className="NavBtn">
-        {" "}
-        Signup{" "}
-      </NavLink>
-      <NavLink to="/login" className="NavBtn">
-        {" "}
-        Login{" "}
-      </NavLink>
-      <NavLink exact to="/home" className="NavBtn">
-        {" "}
-        Your Profile{" "}
-      </NavLink>
-      <NavLink to="/" className="NavBtn">
-        {" "}
-        Logout{" "}
-      </NavLink>
+    <div class="NavBar">
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Anime Planet</NavbarBrand>
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <Link to="/">
+              <NavLink>Home</NavLink>
+            </Link>
+            <NavItem>
+              <Link to="/signup">
+                <NavLink>Sign Up</NavLink>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/">
+                <NavLink>Login</NavLink>
+              </Link>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
     </div>
   );
 };
 
-export default NavBar;
+export default CoolNav;
