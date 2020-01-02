@@ -44,7 +44,13 @@
   }
 }
 
-.body {
+.App {
   color: skyblue;
-  background-color: black;
+  background: black;
+
+}
+
+img {
+  width: 60px;
+  height: 60px;
 }

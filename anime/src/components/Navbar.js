@@ -19,6 +19,7 @@ const CoolNav = props => {
   return (
     <div class="NavBar">
       <Navbar color="light" light expand="md">
+        <img src={require("../imgs/dragonicon.jpeg")} className="icon" />
         <NavbarBrand href="/">Anime Planet</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
