@@ -1,9 +1,17 @@
 import React from "react";
+
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import {AuthAttempt} from "../Actions/Login";
+import { useSelector, useDispatch } from "react-redux";
 
 const LoginForm = ({ touched, errors, isSubmitting, values }) => {
+
+  const logged = useSelector(state=>state.login)
+  
+  const dispatch = useDispatch();
+
   return (
     <div className="login_form">
       <Form>
@@ -62,8 +70,10 @@ const SuperLoginForm = withFormik({
     first_name: Yup.string().required("First name is required!"),
     last_name: Yup.string().required("Last name is required!"),
     email: Yup.string().required("Email address is required!")
-  })
-  // handleSubmit(values, {resetForm, setSubmitting, setStatus}){
+  }),
+  handleSubmit(values, {resetForm, setSubmitting, setStatus}){
+    console.log(values);
+    dispatch(AuthAttempt);
   //  axios.post(‘’, values)
   // .then(response => {
   //    console.log(response);
@@ -72,8 +82,8 @@ const SuperLoginForm = withFormik({
   //    setStatus(response.data);
   // })
   // .catch(error => console.log(error));
-  // setSubmitting(false);
-  // }
+  setSubmitting(false);
+  }
 })(LoginForm);
 
 export default SuperLoginForm;

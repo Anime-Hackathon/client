@@ -5,14 +5,19 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 
+import AllReducer from "./Reducers/MasterReducer";
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 
+const store = createStore(AllReducer, applyMiddleware(thunk));
+
 
 ReactDOM.render(
     <Router>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

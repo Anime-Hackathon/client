@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {LoginReducer} from "../FirstReducer";
+import {LoginReducer} from "./FirstReducer";
 
 import {combineReducers} from 'redux';
 
