@@ -17,17 +17,22 @@ const loading = () => {
   return { type: "loading" };
 };
 
-export const AuthAttempt = loginStuff => {
+export const AuthAttempt = (loginStuff) => {
+
   return function(dispatch) {
+
     dispatch(loading);
 
-    return axios
-      .post("https://the-anime-planet.herokuapp.com/api/auth/login", loginStuff)
-      .then(res => {
-        console.log("response", res);
-      })
-      .catch(err => {
-        console.log("error", err);
-      });
+    return axios.post('https://the-anime-planet.herokuapp.com/api/auth/register', loginStuff)
+    .then(res => {
+      if (res.status === 500) {
+        dispatch(failure(res.data))
+      }else{
+        dispatch(success(res.data))
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    });
   };
 };
