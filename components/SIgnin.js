@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 
 const SignIn = () => {
     const {user, setUser} = useState({
-        username: ''
+        username: '',
+        password: ''
     })
     return (
         <section>
