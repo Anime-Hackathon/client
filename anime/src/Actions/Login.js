@@ -20,7 +20,6 @@ const loading = () => {
 export const AuthAttempt = loginStuff => {
   return function(dispatch) {
     dispatch(loading);
-
     return axios
       .post("https://the-anime-planet.herokuapp.com/api/auth/login", loginStuff)
       .then(res => {
