@@ -37,7 +37,7 @@ const LoginForm = ({AuthAttempt,dispatch,touched, errors, isSubmitting, values }
 const SuperLoginForm = withFormik({
   mapPropsToValues({ email, password }) {
     return {
-      username: email || "",
+      email: email || "",
       password: password || ""
     };
   },
