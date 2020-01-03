@@ -34,7 +34,7 @@ const CoolNav = props => {
 
   return (
     <div className="NavBar">
-      <Navbar color="light" light expand="md">
+      <Navbar color="info" light expand="md">
         <img src={require("../imgs/dragonicon.jpeg")} className="icon" />
         <NavbarBrand className="NavText" href="/">
           Anime Planet
