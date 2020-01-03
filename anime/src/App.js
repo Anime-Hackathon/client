@@ -8,7 +8,7 @@ import { AuthAttempt, AuthSignUp } from "./Actions/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import AnimeList from "./components/AnimeList";
 //Components
-import Signin from "./components/Signin";
+import Signin from "./components/Sigin";
 import Signup from "./components/Signup";
 
 function App() {
