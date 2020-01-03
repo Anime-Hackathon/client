@@ -5,7 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Switch, Router } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {AuthAttempt, AuthSignUp} from "./Actions/Login";
-
+import PrivateRoute from './components/PrivateRoute'
+import AnimeList from "./components/AnimeList";
 //Components
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
@@ -20,6 +21,8 @@ function App() {
         <NavBar />
         <Route exact path="/" render={(props)=> <Signin {...props} dispatch={dispatch} AuthAttempt={AuthAttempt}/>}/>
         <Route path="/SignUp" render ={(props)=> <Signup {...props} dispatch={dispatch} AuthSignUp={AuthSignUp}/>}/>
+        <PrivateRoute path="/prList" component={AnimeList} />
+           
       </div>
     </div>
   );

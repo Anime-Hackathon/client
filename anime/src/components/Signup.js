@@ -3,9 +3,14 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
+import { useSelector, useDispatch } from "react-redux";
+
 
 const SignUpForm = ({AuthSignUp, dispatch, touched, errors, isSubmitting, values }) => {
 
+  const logged = useSelector(state=>state.login);
+
+  console.log(logged);
 
   return (
     <div className="login_form">
