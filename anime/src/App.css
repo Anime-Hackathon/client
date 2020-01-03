@@ -51,7 +51,10 @@
 .NavBar .NavLink a:hover {
   font-size: 2.5rem;
   color: skyblue;
+}
 
+.button:hover {
+  background: black;
 }
 
 .NavBar img {
@@ -60,14 +63,14 @@
 }
 
 .AnimeCard {
-  border: 4px solid brown;
+  border: 4px solid skyblue;
   display: flex;
   justify-content: space-evenly;
   margin: 2% 0;
 }
 
 .AnimeCard img {
-  border: 4px solid pink;
+  border: 4px solid skyblue;
   width: 20%;
   /* object-fit: contain; */
 }
@@ -91,3 +94,26 @@
   align-items: space-between;
   justify-content: center;
 } */
+.login_form {
+  width: 60%;
+  margin: 0 auto;
+  border: 4px solid skyblue;
+  border-radius: 10px;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+}
+
+.LoginForm {
+  width: 50%;
+  margin: 0 auto;
+  border: 3px solid skyblue;
+  border-radius: 5px;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+}
