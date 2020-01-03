@@ -37,7 +37,7 @@ const AnimeInfo = props => {
   return (
     <div>
       <Button
-        color="info"
+        color="primary"
         onClick={toggle}
       >{`Learn more about ${props.title}`}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
