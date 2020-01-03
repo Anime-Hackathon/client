@@ -45,13 +45,17 @@ const SuperLoginForm = withFormik({
     email: Yup.string().required("Email is required!"),
     password: Yup.string().required("Password is required!")
   }),
-  handleSubmit(values, { props,resetForm, setSubmitting, setStatus }) {
+  async handleSubmit(values, { props,resetForm, setSubmitting, setStatus }) {
 
-    props.dispatch(AuthAttempt(values))
+    // user@gmail.com
+    // pass
+    console.log("values sent to endpoint",values)
 
-    console.log("it worked");
-    setSubmitting(false);
+    await props.dispatch(props.AuthAttempt(values))
+    console.log(props.history, "this is the history sigin")
+
+    props.history.push('/prList')
+    
   }
 })(LoginForm);
-
 export default SuperLoginForm;
