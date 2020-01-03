@@ -17,7 +17,7 @@ const CoolNav = props => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div class="NavBar">
+    <div className="NavBar">
       <Navbar color="light" light expand="md">
         <img src={require("../imgs/dragonicon.jpeg")} className="icon" />
         <NavbarBrand href="/">Anime Planet</NavbarBrand>
