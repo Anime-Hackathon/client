@@ -1,3 +1,7 @@
+*{
+  font-size: 62.5%;
+}
+
 .App {
   text-align: center;
   font-family: 'Stoke',
@@ -6,10 +10,7 @@
     sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -24,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 2.4rem;
   color: skyblue;
   font-family: 'Stoke',
     serif;
@@ -34,23 +35,51 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
 
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 .App {
   color: skyblue;
   background: black;
+  font-size: 20px;
 
 }
+  .NavBar .NavText{
+    font-size: 2.5rem;
+  }
+  
 
-img {
+.NavBar img {
   width: 60px;
   height: 60px;
 }
+.AnimeCard{
+  border: 4px solid brown;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2% 0;
+}
+.AnimeCard img {
+  border: 4px solid pink;
+  width: 20%;
+  /* object-fit: contain; */
+}
+.AnimeCard div{
+  /* border:1px solid red; */
+  font-size: 2.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* .AnimeText{
+  border:1px solid red;
+  font-size: 2.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+} */
+
