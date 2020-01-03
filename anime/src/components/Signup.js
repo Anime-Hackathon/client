@@ -50,11 +50,10 @@ const superSignUpForm = withFormik({
   }),
 
   handleSubmit(values, { props, resetForm, setSubmitting, setStatus }) {
-
-    props.dispatch(props.AuthSignUp(values))
+    props.dispatch(props.AuthSignUp(values));
 
     setSubmitting(false);
   }
-  })(SignUpForm);
+})(SignUpForm);
 
 export default superSignUpForm;
