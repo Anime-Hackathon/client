@@ -17,26 +17,29 @@ const LoginForm = ({
   const logged = useSelector(state => state.login);
 
   return (
-    <div className="login_form">
-      <Form>
-        <Field
-          type="text"
-          name="email"
-          placeholder="Email"
-          value={values.email}
-        />
-        {touched.username && errors.username && <p>{errors.name}</p>}
-        <Field
-          type="password"
-          placeholder="password"
-          name="password"
-          value={values.password}
-        />
-        {touched.password && errors.password && <p>{errors.password}</p>}
-        <button type="submit" disabled={isSubmitting}>
-          Login!
-        </button>
-      </Form>
+    <div className="pic">
+      <img src={require("../imgs/anime.jpg")} className="picture" />
+      <div className="login_form">
+        <Form>
+          <Field
+            type="text"
+            name="email"
+            placeholder="Email"
+            value={values.email}
+          />
+          {touched.username && errors.username && <p>{errors.name}</p>}
+          <Field
+            type="password"
+            placeholder="password"
+            name="password"
+            value={values.password}
+          />
+          {touched.password && errors.password && <p>{errors.password}</p>}
+          <button type="submit" disabled={isSubmitting}>
+            Login!
+          </button>
+        </Form>
+      </div>
     </div>
   );
 };

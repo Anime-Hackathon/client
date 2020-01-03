@@ -99,7 +99,7 @@
   margin: 0 auto;
   border: 4px solid skyblue;
   border-radius: 10px;
-  height: 80vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,11 +107,11 @@
 }
 
 .LoginForm {
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
-  border: 4px solid skyblue;
-  border-radius: 10px;
-  height: 80vh;
+  border: 3px solid skyblue;
+  border-radius: 5px;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
