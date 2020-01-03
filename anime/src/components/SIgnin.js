@@ -6,8 +6,14 @@ import axios from "axios";
 import { AuthAttempt } from "../Actions/Login";
 import { useSelector, useDispatch } from "react-redux";
 
-const LoginForm = ({AuthAttempt,dispatch,touched, errors, isSubmitting, values }) => {
-  
+const LoginForm = ({
+  AuthAttempt,
+  dispatch,
+  touched,
+  errors,
+  isSubmitting,
+  values
+}) => {
   const logged = useSelector(state => state.login);
 
   return (
@@ -45,9 +51,8 @@ const SuperLoginForm = withFormik({
     email: Yup.string().required("Email is required!"),
     password: Yup.string().required("Password is required!")
   }),
-  handleSubmit(values, { props,resetForm, setSubmitting, setStatus }) {
-
-    props.dispatch(AuthAttempt(values))
+  handleSubmit(values, { props, resetForm, setSubmitting, setStatus }) {
+    props.dispatch(AuthAttempt(values));
 
     console.log("it worked");
     setSubmitting(false);

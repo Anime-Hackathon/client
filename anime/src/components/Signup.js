@@ -3,10 +3,14 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 
-
-const SignUpForm = ({AuthSignUp, dispatch, touched, errors, isSubmitting, values }) => {
-
-
+const SignUpForm = ({
+  AuthSignUp,
+  dispatch,
+  touched,
+  errors,
+  isSubmitting,
+  values
+}) => {
   return (
     <div className="login_form">
       <Form>
@@ -45,11 +49,10 @@ const superSignUpForm = withFormik({
   }),
 
   handleSubmit(values, { props, resetForm, setSubmitting, setStatus }) {
-
-    props.dispatch(props.AuthSignUp(values))
+    props.dispatch(props.AuthSignUp(values));
 
     setSubmitting(false);
   }
-  })(SignUpForm);
+})(SignUpForm);
 
 export default superSignUpForm;

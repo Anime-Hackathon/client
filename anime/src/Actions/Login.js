@@ -27,18 +27,20 @@ export const AuthAttempt = loginStuff => {
   };
 };
 
-export const AuthSignUp = signupStuff=>{
-  return function(dispatch){
-
-    dispatch(loading)
+export const AuthSignUp = signupStuff => {
+  return function(dispatch) {
+    dispatch(loading);
 
     return axios
-    .post("https://the-anime-planet.herokuapp.com/api/auth/register", signupStuff)
-    .then(res => {
-      console.log("from signup response", res);
-    })
-    .catch(err => {
-      console.log(" from signup error", err);
-    });
-  }
-}
+      .post(
+        "https://the-anime-planet.herokuapp.com/api/auth/register",
+        signupStuff
+      )
+      .then(res => {
+        console.log("from signup response", res);
+      })
+      .catch(err => {
+        console.log(" from signup error", err);
+      });
+  };
+};
