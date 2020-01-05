@@ -34,6 +34,7 @@ function App() {
         <PrivateRoute path="/prList" component={AnimeList} />
       </div>
     </div>
+    
   );
 }
 
